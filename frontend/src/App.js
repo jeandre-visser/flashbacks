@@ -2,9 +2,9 @@ import { Grid, Grow, Typography, AppBar, Container } from '@material-ui/core';
 
 const App = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <AppBar position="static" color="inherit">
-        <Typography variant="h2" align="center">Flashbacks</Typography>
+        <Typography variant="h2" align="left">Flashbacks</Typography>
       </AppBar> 
     </Container>
   )
