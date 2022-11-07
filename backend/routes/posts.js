@@ -1,8 +1,7 @@
 import express from 'express';
 const router = express.Router();
+import { getPosts } from '../controllers/posts.js';
 
-router.get('/', (req, res) => {
-  res.send("Connected!")
-});
+router.get('/', getPosts);
 
 export default router;
