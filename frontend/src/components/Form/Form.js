@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 import useStyles from './styles';
 import { Typography, Button, TextField } from '@material-ui/core';
 import { MdPhotoCamera } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { createPost } from '../../actions/posts';
 
 const Form = () => {
   const classes = useStyles();
-  const handleSubmit = () => {
+  const dispatch = useDispatch();
 
-  }
-
-  const clear = () => {
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(createPost(postData));
   }
 
   const [ postData, setPostData ] = useState({
     user: '', title: '', message: '', tags: '', selectedFile: ''
   });
+  
   
   return (
     <div className={classes.div}>
