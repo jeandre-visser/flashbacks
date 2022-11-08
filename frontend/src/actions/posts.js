@@ -12,5 +12,16 @@ export const getPosts = () => async (dispatch) => {
   } catch(error) {
     console.log(error.message)
   }
+}
 
+// Obtain the data in the try catch block
+export const createPost = (post) => async (dispatch) => {
+  try {
+    // Post api request to backend server
+    const { data } = await api.createPost(post);
+    // Dispatch the CREATE action with the data
+    dispatch({ type: 'CREATE', payload: data });
+  } catch (error) {
+    console.log(error)
+  }
 }
