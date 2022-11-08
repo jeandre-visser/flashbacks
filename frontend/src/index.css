@@ -1,0 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/cerebri-sans');
+
+:root {
+  --font-base: 'Calibre Sans', sans-serif;
+
+  --primary-color: #edeff0;
+  --secondary-color: #057be9;
+  --black-color: #030303;
+  --yellow-color: #ffcd00;
+}
+
+* {
+  scroll-behavior: smooth;
+}
