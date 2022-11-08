@@ -1,13 +1,8 @@
 import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 
-export default makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(0.5),
-    },
-  },
+export default makeStyles(() => ({
   div: {
-    padding: theme.spacing(2),
+    padding: '1rem',
     boxShadow: '0px 0px 15px rgba(5, 123, 233, 1.0)',
     borderRadius: '1.5rem',
   },
