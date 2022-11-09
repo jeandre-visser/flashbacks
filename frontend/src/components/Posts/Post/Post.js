@@ -6,7 +6,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import MoreHoriz from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
   
   return (
