@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles({
   div: {
     padding: '1rem',
     boxShadow: '0px 0px 15px rgba(5, 123, 233, 1.0)',
@@ -39,4 +39,4 @@ export default makeStyles(() => ({
       transition: '0s all ease-in-out'
     }
   }
-}));
+});
