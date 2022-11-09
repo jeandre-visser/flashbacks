@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
 import { Typography, Button, TextField } from '@material-ui/core';
 import FileBase from 'react-file-base64';
-import { MdPhotoCamera } from 'react-icons/md';
+// import { MdPhotoCamera } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts';
 import { useSelector } from 'react-redux';
