@@ -4,7 +4,7 @@ import { Typography, Button, TextField } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import { MdPhotoCamera } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { createPost } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
@@ -12,7 +12,12 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createPost(postData));
+
+    if (currentId) {
+      dispatch(updatePost(currentId, postData))
+    } else {
+      dispatch(createPost(postData));
+    }
   }
 
   const [postData, setPostData] = useState({
