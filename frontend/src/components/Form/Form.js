@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
 import { Typography, Button, TextField } from '@material-ui/core';
 import FileBase from 'react-file-base64';
@@ -10,6 +10,11 @@ import { useSelector } from 'react-redux';
 const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (post) setPostData(post);
+  }, [post])
+
   const post = useSelector((state) => currentId ? state.posts.find((pos) => pos._id === currentId) : '');
 
   const handleSubmit = (event) => {
