@@ -48,7 +48,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField 
           name="user" 
           variant="outlined" 
-          label="User" 
+          label="Your Name" 
           fullWidth
           value={postData.user}
           onChange={(event) => setPostData({ ...postData, user: event.target.value })}
@@ -64,7 +64,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField 
           name="message" 
           variant="outlined" 
-          label="Your Flashback" 
+          label="Description" 
           fullWidth
           value={postData.message}
           onChange={(event) => setPostData({ ...postData, message: event.target.value })}
