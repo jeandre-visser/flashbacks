@@ -11,11 +11,11 @@ const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  const post = useSelector((state) => currentId ? state.posts.find((pos) => pos._id === currentId) : '');
+  
   useEffect(() => {
     if (post) setPostData(post);
-  }, [post])
-
-  const post = useSelector((state) => currentId ? state.posts.find((pos) => pos._id === currentId) : '');
+  }, [post]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
