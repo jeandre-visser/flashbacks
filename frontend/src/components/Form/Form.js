@@ -5,10 +5,12 @@ import FileBase from 'react-file-base64';
 import { MdPhotoCamera } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts';
+import { useSelector } from 'react-redux';
 
 const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const post = useSelector((state) => currentId ? state.posts.find((pos) => pos._id === currentId) : '');
 
   const handleSubmit = (event) => {
     event.preventDefault();
