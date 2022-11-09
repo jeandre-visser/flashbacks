@@ -1,4 +1,8 @@
-import { Grid, Grow, Typography, AppBar, Container } from '@material-ui/core';
+import { Grid, Grow, AppBar, Container } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { getPosts } from './actions/posts'; 
+
 import './App.css';
 import { images } from './constants/index.js';
 import Posts from './components/Posts/Posts.js';
@@ -7,6 +11,12 @@ import useStyles from './styles';
 
 const App = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const [currentId, setCurrentId] = useState(null);
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch])
 
   return (
     <Container maxWidth="xl" >
@@ -15,12 +25,12 @@ const App = () => {
       </AppBar> 
       <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-            <Grid item xs={12} sm={7}>
-              <Posts />
+          <Grid container justify="space-between" alignItems="stretch" spacing={4}>
+            <Grid item xs={12} sm={4} >
+              <Form currentId={currentId} setCurrentId={setCurrentId} />
             </Grid>
-            <Grid item xs={12} sm={4}>
-              <Form />
+            <Grid item xs={12} sm={7}>
+              <Posts setCurrentId={setCurrentId} />
             </Grid>
           </Grid>
         </Container>
