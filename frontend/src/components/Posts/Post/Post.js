@@ -28,7 +28,7 @@ const Post = ({ post, setCurrentId }) => {
         {post.title}
       </Typography>
       <CardContent>
-        <Typography>
+        <Typography variant="body">
           {post.message}
         </Typography>
         <div className={classes.info}>

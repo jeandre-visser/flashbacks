@@ -13,12 +13,12 @@ const Posts = ({ setCurrentId }) => {
     !posts.length ? <CircularProgress /> : (
       <Grid
         container
-        alignItems="stretch"
-        spacing={2}
+        alignItems="flex-start"
+        spacing={1}
         className={classes.container}
       >
         {posts.map((post) => (
-          <Grid item key={post._id} xs={12} sm={4} >
+          <Grid item key={post._id} xs={12} sm={8} md={6} >
             <Post post={post} setCurrentId={setCurrentId} />
           </Grid>
         ))}
