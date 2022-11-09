@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useStyles from './styles';
 import { Typography, Button, TextField } from '@material-ui/core';
+import FileBase from 'react-file-base64';
 import { MdPhotoCamera } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/posts';
@@ -14,7 +15,7 @@ const Form = () => {
     dispatch(createPost(postData));
   }
 
-  const [ postData, setPostData ] = useState({
+  const [postData, setPostData] = useState({
     user: '', title: '', message: '', tags: '', selectedFile: ''
   });
   
@@ -26,7 +27,7 @@ const Form = () => {
           Flashback
         </Typography>
         <TextField 
-          name="User" 
+          name="user" 
           variant="outlined" 
           label="User" 
           fullWidth
@@ -58,13 +59,7 @@ const Form = () => {
           onChange={(event) => setPostData({ ...postData, tags: event.target.value })}
         />
         <div className={classes.fileInput}>
-          <Button variant="contained" component="label" disableElevation className={classes.photo}>
-            Upload <MdPhotoCamera size={20} style={{marginLeft: '5px'}} />
-          <input hidden accept="image/*" 
-            multiple={false}
-            type="file"
-            onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
-          </Button>
+        <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
         </div>
         <Button 
           className={classes.btn} 
