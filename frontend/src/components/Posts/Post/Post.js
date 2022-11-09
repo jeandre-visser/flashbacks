@@ -5,9 +5,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import EditIcon from '@material-ui/icons/Edit';
 import moment from 'moment';
+import { deletePost } from '../../../actions/posts';
+import { useDispatch } from 'react-redux';
 
 const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   
   return (
     <Card className={classes.card} >
@@ -39,7 +42,7 @@ const Post = ({ post, setCurrentId }) => {
             <ThumbUpIcon fontSize="small" style={{ marginRight: '3px' }} />
             {post.likeCount}
           </Button>
-          <Button color="secondary" size="small" onClick={() => {}} style={{maxWidth: '25px', maxHeight: '25px', minWidth: '25px', minHeight: '25px'}} >
+          <Button color="secondary" size="small" onClick={() => dispatch(deletePost(post._id))} style={{maxWidth: '25px', maxHeight: '25px', minWidth: '25px', minHeight: '25px'}} >
             <DeleteIcon fontSize="small"/>
           </Button>
       </CardActions>
