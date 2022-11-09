@@ -3,7 +3,7 @@ import useStyles from './styles';
 import { CardActions, Card, CardMedia, CardContent, Button, Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import MoreHoriz from '@material-ui/icons/MoreHoriz';
+import EditIcon from '@material-ui/icons/Edit';
 import moment from 'moment';
 
 const Post = ({ post, setCurrentId }) => {
@@ -12,13 +12,13 @@ const Post = ({ post, setCurrentId }) => {
   return (
     <Card className={classes.card} >
       <CardMedia className={classes.image} title={post.title} image={post.selectedFile} />
-      <div className={classes.overlay} >
+      <div className={classes.heading} >
         <Typography variant="h6">{post.user}</Typography>
         <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
       </div>
-      <div className={classes.overlay2}>
-        <Button style={{ color: '#FFF'}} size='small' onClick={() => {}} >
-          <MoreHoriz fontSize="medium" />
+      <div className={classes.edit}>
+        <Button style={{ color: '#FFF'}} size='small' onClick={() => {setCurrentId(post._id)}} >
+          <EditIcon fontSize="medium" />
         </Button>
       </div>
       <div className={classes.info}>
