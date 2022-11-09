@@ -21,15 +21,18 @@ const Post = ({ post, setCurrentId }) => {
           <EditIcon fontSize="medium" />
         </Button>
       </div>
-      <div className={classes.info}>
-        <Typography variant='body1' color="textSecondary">
-          {post.tags.map((tag) => `${tag} `)}
-        </Typography>
-      </div>
+      <Typography className={classes.title} variant="h5">
+        {post.title}
+      </Typography>
       <CardContent>
-        <Typography className={classes.title} variant="h5" gutterBottom >
+        <Typography>
           {post.message}
         </Typography>
+        <div className={classes.info}>
+          <Typography variant='body1' color="textSecondary">
+          {post.tags.map((tag) => `${tag} `)}
+          </Typography>
+        </div>
       </CardContent>
       <CardActions className={classes.cardActions}>
           <Button className={classes.btn} onClick={() => {}} style={{maxWidth: '34px', maxHeight: '30px', minWidth: '34px', minHeight: '30px'}}>

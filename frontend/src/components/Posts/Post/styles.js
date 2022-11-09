@@ -6,7 +6,7 @@ export default makeStyles({
   },
   image: {
     height: 0,
-    paddingTop: '55%',
+    paddingTop: '65%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
   },
@@ -24,16 +24,16 @@ export default makeStyles({
     height: '100%',
     position: 'relative',
   },
-  overlay: {
+  heading: {
     position: 'absolute',
     top: '15px',
     left: '20px',
     color: '#FFF',
   },
-  overlay2: {
+  edit: {
     position: 'absolute',
     top: '15px',
-    right: '10px',
+    right: '0',
     color: '#FFF',
   },
   grid: {
@@ -42,15 +42,16 @@ export default makeStyles({
   info: {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '20px',
+    marginTop: '10px',
   },
   title: {
-    padding: '0 12px',
+    padding: '10px 15px',
+    marginTop: '0.5rem',
   },
   cardActions: {
     display: 'flex',
     justifyContent: 'flex-start',
     padding: '10px 15px',
-
+    margin: '5px 8px',
   },
 });
