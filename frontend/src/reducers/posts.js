@@ -1,4 +1,5 @@
 // Create reducer with a state of 'posts'
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (posts = [], action) => {
   // switch statement returns based on action
   switch(action.type) {
