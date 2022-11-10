@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { AppBar, Avatar, Toolbar, Typography, Button } from '@material-ui/core';
+import { AppBar, Avatar, Link, Toolbar, Typography, Button } from '@material-ui/core';
 import useStyles from './styles';
 import { images } from '../../constants';
 
@@ -11,7 +10,9 @@ const Navbar = () => {
   return (
     <AppBar className={classes.appBar} position="static">
       <div className={classes.navContainer}>
-        <img component={Link} to="/" src={images.navLogo} alt="logo" className={classes.image} />
+        <Link href="/">
+          <img src={images.navLogo} alt="logo" className={classes.image} />
+        </Link>
       </div>
       <Toolbar classnName={classes.tool} >
         {user ? (
@@ -23,7 +24,9 @@ const Navbar = () => {
             <Button className={classes.logout} variant="contained">Sign out</Button>
           </div>  
          ) : (
-          <Button component={Link} to="/auth" variant="contained" className={classes.signOut}>Sign In</Button>
+          <Link href="/auth" underline="none">
+            <Button variant="contained" className={classes.signOut}>Sign In</Button>
+          </Link>
          )}
       </Toolbar>
     </AppBar> 
