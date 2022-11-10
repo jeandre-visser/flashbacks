@@ -6,7 +6,7 @@ export default makeStyles(() => ({
     margin: '15px 0',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     padding: '15px',
     backgroundColor: '#057be9',
@@ -16,4 +16,8 @@ export default makeStyles(() => ({
     marginLeft: '15px',
     width: '200px'
   },
+  signOut: {
+    backgroundColor: 'var(--yellow-color)'
+
+  }
 }));
