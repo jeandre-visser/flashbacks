@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, Grid, Typography, Container, TextField, Button } from '@material-ui/core';
+import { Avatar, Grid, Typography, Container, Button } from '@material-ui/core';
 import useStyles from './styles';
 import LockIcon from '@material-ui/icons/Lock';
 import Field from './Field';
@@ -22,7 +22,7 @@ const Auth = () => {
   const handlePassword = () => setShowPassword((prevPassword) => !prevPassword);
 
   return (
-    <Container className={classes.main} maxWidth="sm">
+    <Container maxWidth="sm">
       <div className={classes.page}>
         <Avatar className={classes.avatar}>
           <LockIcon />

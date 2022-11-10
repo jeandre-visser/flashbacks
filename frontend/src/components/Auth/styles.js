@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles({
   page: {
-    marginTop: '5rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -16,13 +15,13 @@ export default makeStyles({
   },
   form: {
     width: '100%',
-    marginTop: '2rem',
+    marginTop: '1.5rem',
     display: 'flex',
     justifyContent: 'center',
     gap: '1rem',
   },
   submitBtn: {
-    margin: "2rem 0 1rem",
+    margin: "1.5rem 0 0.5rem",
     backgroundColor: 'var(--secondary-color)',
     color: "#FFF",
     '&:hover': {
