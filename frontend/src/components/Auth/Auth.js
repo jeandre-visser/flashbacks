@@ -8,7 +8,10 @@ const Auth = () => {
   
   const classes = useStyles();
 
-  const isRegister = true;
+  const [isRegister, setIsRegister] = useState(false);
+
+  const [showPassword, setShowPassword] = useState(false);
+  const handlePassword = () => setShowPassword((prevPassword) => !prevPassword);
 
   const handleOnSubmit = () => {
 
@@ -18,8 +21,11 @@ const Auth = () => {
 
   }
 
-  const [showPassword, setShowPassword] = useState(false);
-  const handlePassword = () => setShowPassword((prevPassword) => !prevPassword);
+
+  const switchLog = () => {
+    setIsRegister((prevIsRegister) => !prevIsRegister);
+    handlePassword(false);
+  }
 
   return (
     <Container maxWidth="sm">
@@ -52,6 +58,13 @@ const Auth = () => {
            <Button type="submit" fullWidth variant="contained" className={classes.submitBtn} >
               {isRegister ? "Register" : "Sign In"}
            </Button>
+           <Grid container justify="center">
+            <Grid item style={{ textAlign: 'center'}}>
+              <Button onClick={switchLog} justify='center' >
+                {isRegister ? "Already a user? Sign In" : "Not a user? Register now"}
+              </Button>
+            </Grid>
+           </Grid>
           </Grid>
         </form>
       </div>
