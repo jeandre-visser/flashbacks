@@ -12,10 +12,6 @@ export default makeStyles((theme) => ({
     backgroundColor: '#057be9',
     marginBottom: '4rem'
   },
-  image: {
-    marginLeft: '15px',
-    width: '200px'
-  },
   [theme.breakpoints.down('xs')]: {
     main: {
       flexDirection: 'column',

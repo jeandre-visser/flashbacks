@@ -1,10 +1,11 @@
-import { Grid, Grow, AppBar, Container } from '@material-ui/core';
+import { Grid, Grow, Container } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getPosts } from './actions/posts'; 
+import Navbar from './components/Navbar/Navbar';
 
 import './App.css';
-import { images } from './constants/index.js';
+// import { images } from './constants/index.js';
 import Posts from './components/Posts/Posts.js';
 import Form from './components/Form/Form.js';
 import useStyles from './styles';
@@ -20,9 +21,7 @@ const App = () => {
 
   return (
     <Container maxWidth="xl" >
-      <AppBar className={classes.appBar} position="static">
-        <img src={images.navLogo} alt="logo" className={classes.image} />
-      </AppBar> 
+      <Navbar />
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={6} className={classes.main} >
