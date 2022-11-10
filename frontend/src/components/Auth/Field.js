@@ -5,7 +5,8 @@ import { GrFormView, GrFormViewHide } from 'react-icons/gr';
 const Fields = ({ half, name, label, type, autoFocus, handleOnChange, handlePassword }) => {
   return (
     <Grid item xs={12} sm={half ? 6 : 12}>
-      <TextField 
+      <TextField
+        style={{ margin: '0.5rem 0'}}
         name={name}
         label={label}
         variant="outlined"
