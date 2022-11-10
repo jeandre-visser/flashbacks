@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, Grid, Typography, Container, TextField, Button } from '@material-ui/core';
 import useStyles from './styles';
 import LockIcon from '@material-ui/icons/Lock';
+import Field from './Field';
 
 const Auth = () => {
   
@@ -27,7 +28,7 @@ const Auth = () => {
           {isRegister ? 'Register' : "Sign In"}
         </Typography>
         <form className={classes.form} onSubmit={handleOnSubmit} >
-          <Grid spacing={1} container>
+          <Grid xs={12} md={8} container>
            {isRegister && (
             <>
               <TextField 
@@ -36,7 +37,6 @@ const Auth = () => {
                 label="First Name" 
                 handleChange={handleChange} xs={6}
               />
-              
             </>
            )}
           </Grid>
