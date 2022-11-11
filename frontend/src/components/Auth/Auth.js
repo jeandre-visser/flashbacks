@@ -5,10 +5,12 @@ import LockIcon from '@material-ui/icons/Lock';
 import Field from './Field';
 import { GoogleLogin } from 'react-google-login';
 import { FcGoogle } from 'react-icons/fc';
+import { useDispatch } from 'react-redux';
 
 const Auth = () => {
   
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [isRegister, setIsRegister] = useState(false);
 
@@ -29,11 +31,19 @@ const Auth = () => {
     handlePassword(false);
   }
 
-  const googleSuccess = (res) => {
-    console.log(res);
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: 'AUTH', data: { result, token }})
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  const googleFail = () => {
+  const googleFail = (error) => {
+    console.log(error);
     console.log("Google login unsuccessful")
   }
 
@@ -74,7 +84,7 @@ const Auth = () => {
             </Button>
 
             <GoogleLogin 
-              clientId="google id"
+              clientId="282200475848-lutdsb2du23ceq17btih0v69m84ne564.apps.googleusercontent.com"
               render={(renderProps) => (
                 <Button 
                   className={classes.google} 
@@ -85,7 +95,7 @@ const Auth = () => {
                   disabled={renderProps.disabled} 
                   startIcon={<FcGoogle size={25} />}
                 >
-                  Sign In With Google
+                  Sign In using Google
                 </Button>
               )}
               cookiePolicy='single_host_origin'
