@@ -6,11 +6,13 @@ import Field from './Field';
 import { GoogleLogin } from 'react-google-login';
 import { FcGoogle } from 'react-icons/fc';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 const Auth = () => {
   
   const classes = useStyles();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [isRegister, setIsRegister] = useState(false);
 
@@ -36,7 +38,9 @@ const Auth = () => {
     const token = res?.tokenId;
 
     try {
-      dispatch({ type: 'AUTH', data: { result, token }})
+      dispatch({ type: 'AUTH', data: { result, token }});
+
+      navigate.push('/')
     } catch (error) {
       console.log(error);
     }
@@ -100,7 +104,7 @@ const Auth = () => {
               )}
               cookiePolicy='single_host_origin'
               onFailure={googleFail}
-              OnSucces={googleSuccess}
+              onSuccess={googleSuccess}
             />
 
             <Grid container justify="center">
