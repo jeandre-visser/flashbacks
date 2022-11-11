@@ -18,7 +18,6 @@ export default makeStyles({
     marginTop: '1.5rem',
     display: 'flex',
     justifyContent: 'center',
-    gap: '1rem',
   },
   submitBtn: {
     margin: "1.5rem 0 0.5rem",
@@ -26,10 +25,22 @@ export default makeStyles({
     color: "#FFF",
     '&:hover': {
       backgroundColor: '#FFF',
-      color: 'var(--secondary-color)'
+      color: 'var(--secondary-color)',
+      border: '2px solid var(--secondary-color)',
+      padding: '4px 14px',
+      transition: 'all 0s ease-in-out'
     }
   },
   google: {
-    marginBottom: '1rem'
+    marginBottom: '2rem',
+    backgroundColor: 'var(--black-color)',
+    color: '#FFF',
+    '&:hover': {
+      backgroundColor: '#FFF',
+      color: 'var(--black-color)',
+      border: '2px solid var(--black-color)',
+      padding: '4px 14px',
+      transition: 'all 0s ease-in-out'
+    }
   },
 });
