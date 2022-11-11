@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, TextField, InputAdornment, IconButton } from '@material-ui/core';
 import { GrFormView, GrFormViewHide } from 'react-icons/gr';
 
-const Fields = ({ half, name, label, type, autoFocus, handleOnChange, handlePassword }) => {
+const Fields = ({ name, label, type, autoFocus, handleOnChange, handlePassword }) => {
   return (
     <Grid item xs={12} >
       <TextField
